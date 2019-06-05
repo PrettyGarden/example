@@ -37,5 +37,27 @@
             <a id="cartButton" href="javascript: void(0);">Add to Cart</a>
         </p>
     </div>
+    <script>
+        var buyButton = document.querySelector('#buyButton');
+        var cartButton = document.querySelector('#cartButton');
+
+        try {
+            buyButton.onclick = function () {
+                console.log('Buy Now');
+                ga('send', 'event', 'Button', 'click', 'Buy Now');
+            }
+        } catch (err) {
+            window.console && console.log(err);
+        }
+        
+        try {
+            cartButton.onclick = function () {
+                console.log('Add to Cart');
+                ga('send', 'event', 'Button', 'click', 'Add to Cart');
+            }
+        } catch (err) {
+            window.console && console.log(err);
+        }
+    </script>
 </body>
 </html>
