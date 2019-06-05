@@ -28,36 +28,14 @@
     </style>
 </head>
 <body>
-    <div class="box">
+<div class="box">
         <h1>Haha!</h1>
         <p>
-            <a id="buyButton" href="javascript: void(0);">Buy Now</a>
+            <a id="buyButton" href="javascript: onclick = function() {console.log('haha 1.');ga('send', 'event', 'Button', 'click', 'Buy Now'); }">Buy Now</a>
         </p>
         <p>
-            <a id="cartButton" href="javascript: void(0);">Add to Cart</a>
+            <a id="cartButton" href="javascript:onclick = function() { console.log('haha 2.'); ga('send', 'event', 'Button', 'click', 'Add to Cart'); }">Add to Cart</a>
         </p>
     </div>
-    <script>
-        var buyButton = document.querySelector('#buyButton');
-        var cartButton = document.querySelector('#cartButton');
-
-        try {
-            buyButton.onclick = function () {
-                console.log('Buy Now');
-                ga('send', 'event', 'Button', 'click', 'Buy Now');
-            }
-        } catch (err) {
-            window.console && console.log(err);
-        }
-        
-        try {
-            cartButton.onclick = function () {
-                console.log('Add to Cart');
-                ga('send', 'event', 'Button', 'click', 'Add to Cart');
-            }
-        } catch (err) {
-            window.console && console.log(err);
-        }
-    </script>
 </body>
 </html>
