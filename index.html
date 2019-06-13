@@ -45,7 +45,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>
             <a id="buyButton"
                href="javascript:;"
-               onclick="console.log('ha 1');ga('send', 'event', 'Button', 'click', 'Buy Now', '1');console.log('end 1');"
+               onclick="console.log('ha 1');
+               function handleOutboundLinkClicks(event) {
+          ga('send', 'event', {
+                eventCategory: 'buyButton',
+                eventAction: 'click',
+                eventLabel: event.target.href
+              });
+            }
+               console.log('end 1');"
             >Buy Now</a>
         </p>
         <p>
