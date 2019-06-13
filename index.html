@@ -12,7 +12,7 @@
 
         gtag('config', 'UA-141509620-1');
     </script>
-   
+
     <style>
         body {
             color: white;
@@ -32,24 +32,31 @@
     <div class="box">
         <h1>Haha!</h1>
         <p>
-            <a id="buyButton"
-               href="javascript:;"
-               onclick="console.log('ha 1');
-               function handleOutboundLinkClicks(event) {
-          ga('send', 'event', {
-                eventCategory: 'buyButton',
-                eventAction: 'click',
-                eventLabel: event.target.href
-              });
-            }
-               console.log('end 1');"
-            >Buy Now</a>
+            <a id="buyButton" href="javascript:;">Buy Now</a>
         </p>
         <p>
             <a id="cartButton" href="javascript:;"
-               onclick="console.log('ha 2');ga('send', 'event', 'Button', 'click', 'Add to Cart', '1');console.log('end 2');"
+               onclick="console.log('dsfsd');"
             >Add to Cart</a>
         </p>
     </div>
+
+    <script>
+        var buyButton = document.querySelector('#buyButton');
+        var cartButton = document.querySelector('#cartButton');
+
+        try {
+            buyButton.onclick = function handleOutboundLinkClicks (event) {
+                console.log('Buy Now');
+                ga('send', 'event', {
+                    eventCategory: 'buyButton',
+                    eventAction: 'click',
+                    eventLabel: event.target.href
+                });
+            }
+        } catch (err) {
+            window.console && console.log(err);
+        }
+    </script>
 </body>
 </html>
