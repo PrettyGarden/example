@@ -35,28 +35,60 @@
             <a id="buyButton" href="javascript:;">Buy Now</a>
         </p>
         <p>
-            <a id="cartButton" href="javascript:;"
-               onclick="console.log('dsfsd');"
-            >Add to Cart</a>
+            <a id="cartButton" href="javascript:;">Add to Cart</a>
         </p>
+    </div>
+
+    <div class="box">
+        <video style="max-width: 100%; height: auto;"
+                controls
+               preload="preload"
+               src="1.mp4"
+               onclick="ga('send', 'event', 'Videos', 'play', 'Fall Campaign');"
+        >
+            Your browser does not support the <code>video</code> element.
+        </video>
     </div>
 
     <script>
         var buyButton = document.querySelector('#buyButton');
         var cartButton = document.querySelector('#cartButton');
 
-        try {
-            buyButton.onclick = function handleOutboundLinkClicks (event) {
-                console.log('Buy Now');
-                ga('send', 'event', {
-                    eventCategory: 'buyButton',
-                    eventAction: 'click',
-                    eventLabel: event.target.href
-                });
+        if(buyButton) {
+            try {
+                buyButton.onclick = function handleOutboundLinkClicks (event) {
+                    console.log('Buy Now');
+                    ga('send', 'event', {
+                        eventCategory: 'buyButton',
+                        eventAction: 'click',
+                        eventLabel: event.target.href
+                    });
+                    console.log(event.target.href);
+                }
+            } catch (err) {
+                window.console && console.log(err);
             }
-        } catch (err) {
-            window.console && console.log(err);
         }
+
+        if(cartButton) {
+            try {
+                cartButton.onclick = function handleOutboundLinkClicks (event) {
+                    console.log('Add cart');
+                    ga('send', 'event', {
+                        eventCategory: 'cartButton',
+                        eventAction: 'click',
+                        eventLabel: event.target.href,
+                        hitType: 'pageview',
+                        page: location.pathname
+                    });
+                    console.log(location.pathname);
+                }
+            } catch (err) {
+                window.console && console.log(err);
+            }
+        }
+
+
     </script>
 </body>
 </html>
