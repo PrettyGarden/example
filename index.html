@@ -44,10 +44,7 @@
                 controls
                preload="preload"
                src="1.mp4"
-               onclick="gtag('event', 'play', {
-                          'event_category' : 'Videos',
-                          'event_label' : 'Fall Campaign'
-                        });"
+               onclick="console.log('paly');ga('send','event','play','videos','Fall Campaign');"
         >
             Your browser does not support the <code>video</code> element.
         </video>
@@ -65,7 +62,6 @@
                         'event_category': 'buy',
                         'event_label': 'buyButton'
                     });
-                    console.log(event.target.href);
                 }
             } catch (err) {
                 window.console && console.log(err);
@@ -80,7 +76,6 @@
                         'event_category': 'add',
                         'event_label': 'Add to Cart'
                     });
-                    console.log(location.pathname);
                 }
             } catch (err) {
                 window.console && console.log(err);
