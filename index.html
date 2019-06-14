@@ -44,7 +44,10 @@
                 controls
                preload="preload"
                src="1.mp4"
-               onclick="gtag('send', 'play', 'Videos', 'Fall Campaign');"
+               onclick="gtag('event', 'play', {
+                          'event_category' : 'Videos',
+                          'event_label' : 'Fall Campaign'
+                        });"
         >
             Your browser does not support the <code>video</code> element.
         </video>
@@ -58,7 +61,6 @@
             try {
                 buyButton.onclick = function handleOutboundLinkClicks (event) {
                     console.log('Buy Now');
-
                     gtag('event', 'click', {
                         'event_category': 'buy',
                         'event_label': 'buyButton'
