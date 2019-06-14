@@ -58,7 +58,7 @@
             try {
                 buyButton.onclick = function handleOutboundLinkClicks (event) {
                     console.log('Buy Now');
-                    ga('send', 'event', {
+                    gtag('send', 'event', {
                         eventCategory: 'buyButton',
                         eventAction: 'click',
                         eventLabel: event.target.href
@@ -74,7 +74,7 @@
             try {
                 cartButton.onclick = function handleOutboundLinkClicks (event) {
                     console.log('Add cart');
-                    ga('send', 'event', {
+                    gtag('send', 'event', {
                         eventCategory: 'cartButton',
                         eventAction: 'click',
                         eventLabel: event.target.href,
