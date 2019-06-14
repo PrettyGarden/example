@@ -58,10 +58,10 @@
             try {
                 buyButton.onclick = function handleOutboundLinkClicks (event) {
                     console.log('Buy Now');
-                    gtag('send', 'event', {
-                        eventCategory: 'buyButton',
-                        eventAction: 'click',
-                        eventLabel: event.target.href
+
+                    gtag('event', 'click', {
+                        'event_category': 'buy',
+                        'event_label': 'buyButton'
                     });
                     console.log(event.target.href);
                 }
@@ -74,12 +74,9 @@
             try {
                 cartButton.onclick = function handleOutboundLinkClicks (event) {
                     console.log('Add cart');
-                    gtag('send', 'event', {
-                        eventCategory: 'cartButton',
-                        eventAction: 'click',
-                        eventLabel: event.target.href,
-                        hitType: 'pageview',
-                        page: location.pathname
+                    gtag('event', 'click', {
+                        'event_category': 'add',
+                        'event_label': 'Add to Cart'
                     });
                     console.log(location.pathname);
                 }
