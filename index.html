@@ -40,11 +40,16 @@
     </div>
 
     <div class="box">
-        <video style="max-width: 100%; height: auto;"
+        <video id="Fall" style="max-width: 100%; height: auto;"
                 controls
                preload="preload"
                src="1.mp4"
-               onclick="console.log('play');gtag('event', 'play', 'Videos', 'Fall Campaign');"
+               onclick="console.log('play');
+               gtag('event', 'play', {
+                        'event_category': 'Videos',
+                        'event_label': 'Fall'
+                    });
+"
         >
             Your browser does not support the <code>video</code> element.
         </video>
