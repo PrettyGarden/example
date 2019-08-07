@@ -34,7 +34,7 @@
     <div class="box">
         <h1>Haha!</h1>
         <p>
-            <a id="buyButton" href="javascript:void(0);" target="_blank">Buy Now</a>
+            <a id="buyButton" href="javascript:void(0);" target="_blank" style="visibility: hidden;">Buy Now</a>
         </p>
         <p>
             <a id="cartButton" href="javascript:void(0);" target="_blank" style="display: none;">Add to Cart</a>
@@ -83,15 +83,19 @@
                         'event_category': 'Add to Cart',
                         'event_label': 'cartButton'
                     });
+                    console.log('Add cart 22');
                 }
             } catch (err) {
                 window.console && console.log(err);
             }
         }
 
+        buyButton.onclick();
         cartButton.onclick();
 
 
+
     </script>
+
 </body>
 </html>
