@@ -83,7 +83,6 @@
                         'event_category': 'Add to Cart',
                         'event_label': 'cartButton'
                     });
-                    console.log('Add cart 22');
                 }
             } catch (err) {
                 window.console && console.log(err);
@@ -96,7 +95,7 @@
         // 非互动事件
         try {
             cartButton.onclick = function handleOutboundLinkClicks (event) {
-                console.log('Add cart');
+                console.log('paid_success');
                 gtag('event', 'paid_success', {
                     'event_category': 'Paid Success',
                     'event_label': 'paidSuccessButton',
