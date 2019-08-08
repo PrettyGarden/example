@@ -94,14 +94,12 @@
 
         // 非互动事件
         try {
-            cartButton.onclick = function handleOutboundLinkClicks (event) {
-                console.log('paid_success');
-                gtag('event', 'paid_success', {
-                    'event_category': 'Paid Success',
-                    'event_label': 'paidSuccessButton',
-                    'non_interaction': true
-                });
-            }
+            console.log('paid_success');
+            gtag('event', 'paid_success', {
+                'event_category': 'Paid Success',
+                'event_label': 'paidSuccessButton',
+                'non_interaction': true
+            });
         } catch (err) {
             window.console && console.log(err);
         }
