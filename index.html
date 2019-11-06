@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <title>GA Test</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141509620-1"></script>
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141509620-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'UA-141509620-1');
-    </script>
+    </script>-->
 
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146885857-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-146885857-1');
+    </script>
 
     <style>
         body {
@@ -58,9 +68,8 @@
     </div>-->
 
     <script>
+        // 详情页购买按钮
         var buyButton = document.querySelector('#buyButton');
-        var cartButton = document.querySelector('#cartButton');
-
         if(buyButton) {
             try {
                 buyButton.onclick = function handleOutboundLinkClicks (event) {
@@ -75,6 +84,8 @@
             }
         }
 
+        // 详情页加入购物车
+        var cartButton = document.querySelector('#cartButton');
         if(cartButton) {
             try {
                 cartButton.onclick = function handleOutboundLinkClicks (event) {
@@ -89,10 +100,23 @@
             }
         }
 
+        // 购物车checkout
+        var checkoutBtn = document.querySelector('#checkoutBtn');
+        if(checkoutBtn) {
+            try {
+                gtag('event', 'click', {
+                    'event_category': 'checkout',
+                    'event_label': 'checkoutBtn'
+                });
+            } catch (err) {
+                window.console && console.log(err);
+            }
+        }
+
         // buyButton.onclick();
         // cartButton.onclick();
 
-        // 非互动事件
+        // 非互动事件:付款成功
         try {
             console.log('paid_success');
             gtag('event', 'paid_success', {
